@@ -4,7 +4,7 @@ size
 success
 * 25 / 25
 speed
-* 7s / 55s
+* 6s / 55s
 
 ```
 -- 7 Billion Humans (2214M) --
@@ -18,18 +18,20 @@ if c == nothing:
 	drop
 endif
 step sw
-step sw
+if e != worker:
+	step se
+	step se
+	step se
+	step e
+	drop
+else:
+	step sw
+endif
 if c == nothing:
 	drop
 endif
 step se
 step se
-if w == worker:
-	step e
-	step e
-	step e
-	drop
-endif
 step se
 step se
 drop
