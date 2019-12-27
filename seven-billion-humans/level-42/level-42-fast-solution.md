@@ -1,9 +1,9 @@
 size
-* 25 / 18
+* 30 / 18
 success
-* 40 / 40
+* 19 / 20
 speed
-* 208.5s / 200s
+* 198s / 200s
 
 ```
 -- 7 Billion Humans (2214M) --
@@ -13,7 +13,6 @@ if e != worker:
 	step e
 	step e
 endif
-mem2 = nearest wall
 a:
 step s
 step s
@@ -37,7 +36,13 @@ else:
 	else:
 		giveto s
 		b:
-		step mem2
+		step n
+		step n
+		step n
+		step n
+		step n
+		step n
+		step n
 		jump a
 	endif
 endif
