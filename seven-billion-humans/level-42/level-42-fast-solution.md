@@ -2,8 +2,10 @@ size
 * 30 / 18
 success
 * 19 / 20
+* 19 / 20
 speed
 * 198s / 200s
+* 196s / 200s
 
 ```
 -- 7 Billion Humans (2214M) --
