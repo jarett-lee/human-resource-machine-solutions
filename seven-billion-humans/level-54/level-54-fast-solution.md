@@ -1,4 +1,6 @@
 
+# Sum solution
+
 ## Runs
 size
 * 37 / 26 
@@ -62,6 +64,53 @@ step e
 if c == datacube:
 	pickup c
 	jump f
+endif
+
+
+
+```
+
+# Guess solution
+
+## Runs
+size
+* 
+success
+* 25 / 25
+speed
+* 
+
+## Code
+```
+-- 7 Billion Humans (2214M) --
+-- 54: Terrain Leveler --
+
+a:
+if c != datacube:
+	step n
+	jump a
+endif
+b:
+pickup c
+write 4
+drop
+if n == datacube:
+	step n
+	jump b
+endif
+c:
+pickup c
+write 5
+drop
+if s == datacube:
+	jump c
+endif
+d:
+pickup c
+write 5
+drop
+if s == datacube:
+	jump d
 endif
 
 
