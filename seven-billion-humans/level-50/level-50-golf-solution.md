@@ -1,36 +1,31 @@
 
 size
-* 16 / 12
+* 12 / 12
 success
 * 25 / 25
 speed
-* 122s / 60s
+* 112s / 60s
 
 ```
 -- 7 Billion Humans (2214M) --
 -- 50: Cubical Communication --
 
+mem1 = set sw
 a:
-if sw == 1:
-	tell everyone morning
+if mem1 > 1:
 	listenfor hi
+	mem1 = calc mem1 - 1
+	jump a
 endif
-if sw == 2:
-	tell everyone ready
-	listenfor morning
-endif
-if sw == 3:
-	tell everyone ok
-	listenfor ready
-endif
-if sw == 4:
-	tell everyone hi
-	listenfor ok
-endif
+b:
 takefrom s
 giveto se
 step w
-jump a
+mem1 = calc mem1 + 1
+if mem1 <= 5:
+	jump b
+endif
+tell everyone hi
 
 
 
