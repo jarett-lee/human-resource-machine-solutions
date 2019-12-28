@@ -66,31 +66,58 @@ This is an initial sort using a single worker.
 
 ## Runs
 size
-* 24 / 12
+* 18 / 12
 success
 * 25 / 25
 speed
-* 843s / 200s
+* 694s / 200s
 
 ## Code
+### Version 3
+I believe version 3 is faster compared to version 2 since there's less pick up and drop when going right-to-left.
+
 ```
 -- 7 Billion Humans (2214M) --
 -- 60: Understaffed Sorting --
 
 step ne
 step ne
-if n != nothing:
-	end
+if n == nothing:
+	step se
+	step se
+	a:
+	if s > se:
+		pickup s
+		drop
+		pickup se
+		step s
+		drop
+		pickup n
+		step e
+		drop
+		step n
+	else:
+		step w
+	endif
+	jump a
 endif
-step se
-step se
-a:
-pickup s
-if se == wall:
-	step s
-	drop
-	step nw
-else:
+
+
+
+```
+
+### Version 2
+```
+-- 7 Billion Humans (2214M) --
+-- 60: Understaffed Sorting --
+
+step ne
+step ne
+if n == nothing:
+	step se
+	step se
+	a:
+	pickup s
 	if myitem > se:
 		drop
 		pickup se
@@ -103,8 +130,8 @@ else:
 		drop
 		step nw
 	endif
+	jump a
 endif
-jump a
 
 
 
