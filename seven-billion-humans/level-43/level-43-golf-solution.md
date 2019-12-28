@@ -20,10 +20,11 @@ speed
 
 a:
 step n
-if n != wall:
+if c != nothing or
+ s != datacube:
 	jump a
 endif
-mem1 = set c
+mem1 = set n
 b:
 step s
 mem2 = calc n + mem1
