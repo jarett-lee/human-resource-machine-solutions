@@ -1,4 +1,6 @@
 
+It looks like the failure trigger is moving, so it's possible to take from the printer first to save a bit of time.
+
 ## Runs
 
 size
@@ -6,18 +8,21 @@ size
 success
 * 25 / 25
 speed
-* 7s / 8s
+* 5s / 8s
 
 ## Code
 
 ```
 -- 7 Billion Humans (2214M) --
--- 47: Automated Pleasantries --
+-- 48: Community Training Day --
 
-if w == worker:
-	listenfor morning
+mem1 = nearest shredder
+takefrom s
+if n != wall:
+	listenfor go
 endif
-tell e morning
+giveto mem1
+tell everyone go
 
 
 
